@@ -20,7 +20,7 @@ class Dog
   end
   
   def self.create(name:, breed:)
-    self.new(name, breed).tap{|obj| obj.save}
+    self.new(name: name, breed: breed).tap{|obj| obj.save}
   end
   
   def self.find_or_create_by(name:, breed:)
@@ -45,7 +45,7 @@ class Dog
     self.new(row[0], row[1], row[2]).tap{|obj| obj.save}
   end
   
-  def initialize(id: nil, name: nil, breed: nil)
+  def initialize(id: nil, name:, breed:)
     @id    = id
     @name  = name
     @breed = breed
