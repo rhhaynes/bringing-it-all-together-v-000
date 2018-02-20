@@ -4,6 +4,7 @@ class Dog
   
   def self.create_table
     sql = <<~SQL
+      CREATE TABLE IF NOT EXISTS dogs;
     SQL
     DB[:conn].execute(sql)
   end
@@ -15,6 +16,9 @@ class Dog
   end
   
   def initialize(id:, name:, breed:)
+    @id    = id
+    @name  = name
+    @breed = breed
   end
   
 end
