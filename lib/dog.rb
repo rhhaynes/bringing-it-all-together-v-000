@@ -23,6 +23,10 @@ class Dog
     Dog.new(name, breed).tap{|obj| obj.save}
   end
   
+  def self.find_by_id(id)
+    Dog.new(name, breed).tap{|obj| obj.save}
+  end
+  
   def self.find_by_name(name)
     sql = <<~SQL
       SELECT * FROM dogs WHERE name = ?;
