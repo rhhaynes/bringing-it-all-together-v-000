@@ -43,7 +43,7 @@ class Dog
       sql = <<~SQL
         INSERT INTO dogs (name, breed) VALUES (?, ?);
       SQL
-      dog = DB[:conn].execute(sql, self.name, self.breed)
+      DB[:conn].execute(sql, self.name, self.breed)
       @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs;")[0][0]
       dog
     end
@@ -54,6 +54,7 @@ class Dog
       UPDATE dogs SET name = ?, breed = ? WHERE id = ?;
     SQL
     DB[:conn].execute(sql, self.name, self.breed, self.id)
+    self
   end
   
 end
