@@ -20,7 +20,7 @@ class Dog
   end
   
   def self.create(dog_hash)
-    Dog.new(dog_hash[:name], dog_hash[:breed]).tap{|obj| obj.save}
+    self.new(dog_hash[:name], dog_hash[:breed]).tap{|obj| obj.save}
   end
   
   def self.find_by_id(id)
