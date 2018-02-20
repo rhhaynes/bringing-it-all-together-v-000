@@ -19,8 +19,8 @@ class Dog
     DB[:conn].execute(sql)
   end
   
-  def self.create(name:, breed:)
-    Dog.new(name, breed).tap{|obj| obj.save}
+  def self.create(dog_hash)
+    Dog.new(dog_hash[:name], dog_hash[:breed]).tap{|obj| obj.save}
   end
   
   def self.find_by_id(id)
