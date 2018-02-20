@@ -27,7 +27,7 @@ class Dog
     sql = <<~SQL
       SELECT * FROM dogs WHERE name = ?, breed = ?;
     SQL
-    info = DB[:conn].execute(sql, self.name, self.breed)
+    info = DB[:conn].execute(sql, name, breed)
     if info.empty?
       self.create(name: name, breed: breed)
     else
