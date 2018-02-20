@@ -34,13 +34,16 @@ class Dog
   end
   
   def save
+    if self.id
+      self.update
+    else
+      sql = <<~SQL
+      SQL
+      DB[:conn].execute(sql)
+    end
   end
   
   def update
   end
   
 end
-
-sql = <<~SQL
-    SQL
-    DB[:conn].execute(sql)
