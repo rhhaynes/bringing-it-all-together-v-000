@@ -4,7 +4,10 @@ class Dog
   
   def self.create_table
     sql = <<~SQL
-      CREATE TABLE IF NOT EXISTS dogs;
+      CREATE TABLE IF NOT EXISTS dogs (
+        id    INTEGER PRIMARY KEY,
+        name  TEXT,
+        breed TEXT);
     SQL
     DB[:conn].execute(sql)
   end
@@ -38,6 +41,7 @@ class Dog
       self.update
     else
       sql = <<~SQL
+        INSERT INTO dogs (name, breed) VALUES ()
       SQL
       DB[:conn].execute(sql)
     end
