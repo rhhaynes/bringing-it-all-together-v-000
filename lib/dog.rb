@@ -19,7 +19,7 @@ class Dog
     DB[:conn].execute(sql)
   end
   
-  def self.create(name:, breed:)
+  def self.create(name, breed)
     self.new(name, breed).tap{|obj| obj.save}
   end
   
