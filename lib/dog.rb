@@ -19,11 +19,8 @@ class Dog
     DB[:conn].execute(sql)
   end
   
-  def self.create()
-    sql = <<~SQL
-      SELECT * FROM dogs WHERE name = ?;
-    SQL
-    self.new_from_db( DB[:conn].execute(sql).first )
+  def self.create(name:, breed:)
+    Dog.new(name, breed).tap{|obj| obj.save}
   end
   
   def self.find_by_name(name)
