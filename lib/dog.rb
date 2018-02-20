@@ -25,16 +25,16 @@ class Dog
   
   def self.find_by_id(id)
     sql = <<~SQL
-      SELECT * FROM dogs WHERE name = ?;
+      SELECT * FROM dogs WHERE id = ?;
     SQL
-    self.new_from_db( DB[:conn].execute(sql).first )
+    self.new_from_db( DB[:conn].execute(sql, id)[0] )
   end
   
   def self.find_by_name(name)
     sql = <<~SQL
       SELECT * FROM dogs WHERE name = ?;
     SQL
-    self.new_from_db( DB[:conn].execute(sql).first )
+    self.new_from_db( DB[:conn].execute(sql, name).first )
   end
   
   def self.new_from_db(row)
