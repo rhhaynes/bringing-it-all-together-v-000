@@ -33,6 +33,9 @@ class Dog
     @breed = breed
   end
   
+  def update
+  end
+  
 end
 
 sql = <<~SQL
