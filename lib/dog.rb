@@ -30,7 +30,7 @@ class Dog
     Dog.new(row[0], row[1], row[2]).tap{|obj| obj.save}
   end
   
-  def initialize(id: = nil, name:, breed:)
+  def initialize(id:, name:, breed:)
     @id    = id
     @name  = name
     @breed = breed
