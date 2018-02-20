@@ -19,6 +19,10 @@ class Dog
     DB[:conn].execute(sql)
   end
   
+  def self.create
+    
+  end
+  
   def self.find_by_name(name)
     sql = <<~SQL
       SELECT * FROM dogs WHERE name = ?;
