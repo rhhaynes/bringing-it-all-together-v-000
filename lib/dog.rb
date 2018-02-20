@@ -33,6 +33,9 @@ class Dog
     @breed = breed
   end
   
+  def save
+  end
+  
   def update
   end
   
