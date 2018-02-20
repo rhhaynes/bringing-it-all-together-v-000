@@ -16,7 +16,11 @@ class Dog
     DB[:conn].execute(sql)
   end
   
-  def initialize(id:, name:, breed:)
+  def self.new_from_db(row)
+    
+  end
+  
+  def initialize(id: = nil, name:, breed:)
     @id    = id
     @name  = name
     @breed = breed
